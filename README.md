@@ -6,3 +6,4 @@ Project's that are creating when practicing Javascript.
 
 * Color Flipper
 * Counter
+* Reviews
