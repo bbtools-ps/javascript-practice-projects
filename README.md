@@ -1,4 +1,4 @@
-#Javascript Practice Projects
+# Javascript Practice Projects
 
 Project's that are creating when practicing Javascript.
 
