@@ -10,3 +10,4 @@ Project's that are creating when practicing Javascript.
 * Slider
 * Navbar
 * Sidebar
+* Modal
