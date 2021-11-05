@@ -8,3 +8,4 @@ Project's that are creating when practicing Javascript.
 * Counter
 * Reviews
 * Slider
+* Navbar
