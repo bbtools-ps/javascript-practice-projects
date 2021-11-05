@@ -9,3 +9,4 @@ Project's that are creating when practicing Javascript.
 * Reviews
 * Slider
 * Navbar
+* Sidebar
