@@ -12,3 +12,4 @@ Project's that are creating when practicing Javascript.
 * Sidebar
 * Modal
 * Questions
+* Menu
