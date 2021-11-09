@@ -13,3 +13,4 @@ Project's that are creating when practicing Javascript.
 * Modal
 * Questions
 * Menu
+* Video
