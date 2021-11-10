@@ -17,3 +17,4 @@ Project's that are creating when practicing Javascript.
 * Scroll
 * Tabs
 * Countdown Timer
+* Lorem Ipsum
