@@ -15,3 +15,4 @@ Project's that are creating when practicing Javascript.
 * Menu
 * Video
 * Scroll
+* Tabs
