@@ -16,3 +16,4 @@ Project's that are creating when practicing Javascript.
 * Video
 * Scroll
 * Tabs
+* Countdown Timer
