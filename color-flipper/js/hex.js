@@ -1,4 +1,3 @@
-
 function getRandomNumber(arr) {
     return Math.floor(Math.random() * arr.length);
 }
@@ -17,5 +16,5 @@ function getRandomNumber(arr) {
 
         color.textContent = randomHexColor;
         document.body.style.backgroundColor = randomHexColor;
-    })
+    });
 })();

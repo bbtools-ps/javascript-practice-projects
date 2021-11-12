@@ -31,8 +31,12 @@
     window.addEventListener("scroll", function () {
         const scrollHeight = window.pageYOffset;
         const navHeight = navbar.getBoundingClientRect().height;
-        scrollHeight > navHeight ? navbar.classList.add("fixed-nav") : navbar.classList.remove("fixed-nav");
-        scrollHeight > 500 ? topLink.classList.add("show-link") : topLink.classList.remove("show-link");
+        scrollHeight > navHeight
+            ? navbar.classList.add("fixed-nav")
+            : navbar.classList.remove("fixed-nav");
+        scrollHeight > 500
+            ? topLink.classList.add("show-link")
+            : topLink.classList.remove("show-link");
     });
 
     // ********** smooth scroll ************
@@ -48,7 +52,8 @@
             const element = document.getElementById(id);
             // calculate the heights
             const navHeight = navbar.getBoundingClientRect().height;
-            const containerHeight = linksContainer.getBoundingClientRect().height;
+            const containerHeight =
+                linksContainer.getBoundingClientRect().height;
             const fixedNav = navbar.classList.contains("fixed-nav");
             let position = element.offsetTop - navHeight;
             // nav when scrolling down
@@ -61,10 +66,9 @@
             }
             window.scrollTo({
                 left: 0,
-                top: position
+                top: position,
             });
             linksContainer.style.height = 0;
         });
     });
 })();
-

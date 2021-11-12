@@ -12,11 +12,9 @@
 
             if (styles.contains("decrease")) {
                 count--;
-            }
-            else if (styles.contains("increase")) {
+            } else if (styles.contains("increase")) {
                 count++;
-            }
-            else {
+            } else {
                 count = 0;
             }
 

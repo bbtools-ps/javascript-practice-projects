@@ -131,7 +131,9 @@
         localStorage.setItem("list", JSON.stringify(items));
     }
     function getLocalStorage() {
-        return localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [];
+        return localStorage.getItem("list")
+            ? JSON.parse(localStorage.getItem("list"))
+            : [];
     }
     // ****** SETUP ITEMS **********
     function setupItems() {
@@ -164,4 +166,3 @@
         list.appendChild(element);
     }
 })();
-
