@@ -48,7 +48,7 @@ main {
     background-color: var(--cultured);
     border: 1px solid var(--gray-x);
     border-radius: 0.5rem;
-    box-shadow: 0 0 2rem rgba(99, 99, 99, 0.5);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 
 h1 {
