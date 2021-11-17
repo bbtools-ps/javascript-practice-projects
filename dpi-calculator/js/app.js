@@ -1,14 +1,18 @@
 (function () {
-    // set variables
+    // ---------- VARIABLES ----------
     const viewingDistance = document.querySelector("#viewing-distance");
     const dpi = document.querySelector("#dpi");
     const units = ["meters", "centimeters", "millimeters", "feet", "inches"];
     const unitsSelect = document.querySelector("#units");
-    let unitsContent = "";
+    let unitsList = "";
     const unitValue = document.querySelector("#unit");
 
-    // units abbreviation
-    function unitsAbbreviation(unit) {
+    /**
+     * Abbreviate units from their full names.
+     * @param {string} unit - full name of the unit.
+     * @returns {string}
+     */
+    function abbreviateUnits(unit) {
         switch (unit) {
             case "meters":
                 return "m";
@@ -25,7 +29,13 @@
         }
     }
 
-    function unitsConverter(unit, value) {
+    /**
+     * Convert units using centimeters as a base value.
+     * @param {string} unit - unit abbreviation.
+     * @param {string} value - input value that has to converted to number.
+     * @returns {number}
+     */
+    function convertUnits(unit, value) {
         switch (unit) {
             case "m":
                 return parseFloat(value) * 100;
@@ -40,21 +50,29 @@
         }
     }
 
-    // calculate dpi based on viewing distance
+    /**
+     * Calculate dpi based on viewing distance.
+     * @param {number} num - viewing distance.
+     * @returns {number}
+     */
     function calcDpi(num) {
         // calculation is done in cm so it has to converted to a proper value
-        let viewingDistanceValue = unitsConverter(unitValue.innerHTML, num);
+        let viewingDistanceValue = convertUnits(unitValue.innerHTML, num);
         return Math.floor((180 / viewingDistanceValue) * 100);
     }
 
-    // calculate viewing distance based on dpi
+    /**
+     * Calculate viewing distance based on dpi.
+     * @param {number} num - dpi.
+     * @returns {number}
+     */
     function calcViewingDistance(num) {
         // calculation is done in cm so it has to converted to a proper value
-        let dpiValue = unitsConverter(unitValue.innerHTML, num);
+        let dpiValue = convertUnits(unitValue.innerHTML, num);
         return Math.floor((180 / dpiValue) * 100);
     }
 
-    // set event listeners
+    // ---------- EVENT LISTENERS ----------
     viewingDistance.addEventListener("input", function () {
         dpi.value = calcDpi(this.value);
     });
@@ -64,16 +82,21 @@
     });
 
     unitsSelect.addEventListener("change", function () {
-        unitValue.innerHTML = unitsAbbreviation(this.value);
+        unitValue.innerHTML = abbreviateUnits(this.value);
         dpi.value = calcDpi(viewingDistance.value);
     });
 
-    // UI
+    // ---------- UI ----------
+    // populate unitsList content with options from units
     units.forEach(function (item) {
-        unitsContent += `<option value="${item}">${item}</option>`;
+        unitsList += `<option value="${item}">${item}</option>`;
     });
-    unitsSelect.innerHTML = unitsContent;
-    unitsSelect.value = units[2];
+    unitsSelect.innerHTML = unitsList;
+    // set units to centimeters
+    unitsSelect.value = units[1];
+    unitValue.innerHTML = abbreviateUnits(unitsSelect.value);
+    // set default viewing distance
     viewingDistance.value = 200;
+    // calculate dpi
     dpi.value = calcDpi(viewingDistance.value);
 })();
