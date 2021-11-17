@@ -63,7 +63,8 @@ form {
 
 .label-container {
     padding: 1rem 0;
-    width: 200px;
+    max-width: 200px;
+    width: 100%;
 }
 
 label {
